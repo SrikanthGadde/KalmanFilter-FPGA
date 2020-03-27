@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at test.v(10): always construct contains both blocking and non-blocking assignments File: D:/intelFPGA_lite/Projects/test/test.v Line: 10
