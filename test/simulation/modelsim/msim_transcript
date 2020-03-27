@@ -12,19 +12,21 @@
 # 
 # vlog -vlog01compat -work work +incdir+D:/intelFPGA_lite/Projects/test {D:/intelFPGA_lite/Projects/test/test.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:31:36 on Mar 27,2020
+# Start time: 00:29:12 on Mar 28,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/intelFPGA_lite/Projects/test" D:/intelFPGA_lite/Projects/test/test.v 
 # -- Compiling module test
 # 
 # Top level modules:
 # 	test
-# End time: 15:31:36 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 00:29:12 on Mar 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vsim work.test
 # vsim work.test 
-# Start time: 15:31:39 on Mar 27,2020
+# Start time: 00:29:14 on Mar 28,2020
 # Loading work.test
+view -new wave
+# -new not supported on PE
 add wave -position insertpoint  \
 sim:/test/a \
 sim:/test/clk \
@@ -37,10 +39,35 @@ sim:/test/right \
 sim:/test/rst \
 sim:/test/sqrt
 force -freeze sim:/test/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/test/rst 1 0
 force -freeze sim:/test/num 100 0
+run
+run
+run
+force -freeze sim:/test/rst 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/test/num 10000 0
 force -freeze sim:/test/rst 1 0
 run
-force -freeze sim:/test/rst St0 0
+run
+force -freeze sim:/test/rst 0 0
 run
 run
 run
@@ -59,7 +86,5 @@ run
 run
 run
 run
-run
-run
-# End time: 17:03:25 on Mar 27,2020, Elapsed time: 1:31:46
-# Errors: 0, Warnings: 0
+# End time: 00:31:01 on Mar 28,2020, Elapsed time: 0:01:47
+# Errors: 1, Warnings: 0
