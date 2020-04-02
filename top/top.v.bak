@@ -1,0 +1,8 @@
+module(A,B,clk,reset,Out);
+
+input [7:0] A, B;
+input clk, reset;
+output reg [7:0] Out;
+
+
+

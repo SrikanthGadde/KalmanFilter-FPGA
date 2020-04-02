@@ -1,0 +1,60 @@
+# Reading D:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/intelFPGA_lite/Projects/top {D:/intelFPGA_lite/Projects/top/top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:19:52 on Apr 02,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/intelFPGA_lite/Projects/top" D:/intelFPGA_lite/Projects/top/top.v 
+# -- Compiling module top
+# ** Warning: D:/intelFPGA_lite/Projects/top/top.v(10): (vlog-2250) Function "sop" has no return value assignment.
+# 
+# Top level modules:
+# 	top
+# End time: 14:19:52 on Apr 02,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# 
+vsim work.top
+# vsim work.top 
+# Start time: 14:19:57 on Apr 02,2020
+# Loading work.top
+add wave -position insertpoint  \
+sim:/top/A1 \
+sim:/top/A2 \
+sim:/top/A3 \
+sim:/top/B1 \
+sim:/top/B2 \
+sim:/top/B3 \
+sim:/top/Out \
+sim:/top/S \
+sim:/top/clk \
+sim:/top/reset
+force -freeze sim:/top/clk 1 0, 0 {50 ps} -r 100
+force -drive sim:/top/reset 1 0
+force -drive sim:/top/A1 1 0
+force -drive sim:/top/A2 10 0
+force -drive sim:/top/A3 11 0
+force -drive sim:/top/B3 100 0
+force -drive sim:/top/B2 101 0
+force -drive sim:/top/B1 110 0
+run
+force -drive sim:/top/reset St0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 14:25:28 on Apr 02,2020, Elapsed time: 0:05:31
+# Errors: 0, Warnings: 0
