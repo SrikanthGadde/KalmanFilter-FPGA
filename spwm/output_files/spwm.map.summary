@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Apr 21 20:31:23 2020
+Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+Revision Name : spwm
+Top-level Entity Name : spwm
+Family : Cyclone IV E
+Total logic elements : 510
+    Total combinational functions : 510
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 134
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 24
+Total PLLs : 0

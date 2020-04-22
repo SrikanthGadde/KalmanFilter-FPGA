@@ -1,0 +1,1544 @@
+Analysis & Synthesis report for ccct
+Tue Apr 21 09:24:15 2020
+Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: clarke:u1|qmult:u1
+ 11. Parameter Settings for User Entity Instance: clarke:u1|qmult:u2
+ 12. Parameter Settings for User Entity Instance: clarke:u1|qmult:u3
+ 13. Parameter Settings for User Entity Instance: clarke:u1|qmult:u4
+ 14. Parameter Settings for User Entity Instance: clarke:u1|qmult:u5
+ 15. Parameter Settings for User Entity Instance: park:u2|qmult:u1
+ 16. Parameter Settings for User Entity Instance: park:u2|qmult:u2
+ 17. Parameter Settings for User Entity Instance: park:u2|qmult:u3
+ 18. Parameter Settings for User Entity Instance: park:u2|qmult:u4
+ 19. Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u1
+ 20. Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u2
+ 21. Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u3
+ 22. Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u4
+ 23. Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u5
+ 24. Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u2|lpm_mult:Mult0
+ 25. Parameter Settings for Inferred Entity Instance: park:u2|qmult:u1|lpm_mult:Mult0
+ 26. Parameter Settings for Inferred Entity Instance: park:u2|qmult:u1|lpm_add_sub:Add2
+ 27. Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u5|lpm_mult:Mult0
+ 28. Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u1|lpm_mult:Mult0
+ 29. Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u1|lpm_add_sub:Add2
+ 30. Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u3|lpm_mult:Mult0
+ 31. Parameter Settings for Inferred Entity Instance: park:u2|qmult:u4|lpm_mult:Mult0
+ 32. Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u4|lpm_mult:Mult0
+ 33. Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u4|lpm_add_sub:Add2
+ 34. Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u1|lpm_mult:Mult0
+ 35. Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u1|lpm_add_sub:Add2
+ 36. Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u4|lpm_mult:Mult0
+ 37. Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u5|lpm_mult:Mult0
+ 38. Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u2|lpm_mult:Mult0
+ 39. Parameter Settings for Inferred Entity Instance: park:u2|qmult:u3|lpm_mult:Mult0
+ 40. Parameter Settings for Inferred Entity Instance: park:u2|qmult:u2|lpm_mult:Mult0
+ 41. lpm_mult Parameter Settings by Entity Instance
+ 42. Port Connectivity Checks: "parkClarkeInverse:u3|qmult:u5"
+ 43. Port Connectivity Checks: "clarke:u1|qmult:u5"
+ 44. Port Connectivity Checks: "clarke:u1|qmult:u4"
+ 45. Port Connectivity Checks: "clarke:u1|qmult:u3"
+ 46. Port Connectivity Checks: "clarke:u1|qmult:u2"
+ 47. Port Connectivity Checks: "clarke:u1|qmult:u1"
+ 48. Post-Synthesis Netlist Statistics for Top Partition
+ 49. Elapsed Time Per Partition
+ 50. Analysis & Synthesis Messages
+ 51. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Apr 21 09:24:15 2020       ;
+; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
+; Revision Name                      ; ccct                                        ;
+; Top-level Entity Name              ; ccct                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 2,236                                       ;
+;     Total combinational functions  ; 2,236                                       ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 256                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 104                                         ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; ccct               ; ccct               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; ccct.v                           ; yes             ; User Verilog HDL File        ; D:/intelFPGA_lite/ccct/ccct.v                                                  ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; db/mult_3dt.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/ccct/db/mult_3dt.tdf                                         ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_pvi.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/ccct/db/add_sub_pvi.tdf                                      ;         ;
+; db/mult_3ht.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/ccct/db/mult_3ht.tdf                                         ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 2,236         ;
+;                                             ;               ;
+; Total combinational functions               ; 2236          ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 0             ;
+;     -- 3 input functions                    ; 1762          ;
+;     -- <=2 input functions                  ; 474           ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 328           ;
+;     -- arithmetic mode                      ; 1908          ;
+;                                             ;               ;
+; Total registers                             ; 0             ;
+;     -- Dedicated logic registers            ; 0             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 256           ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 104           ;
+;                                             ;               ;
+; Maximum fan-out node                        ; cos[31]~input ;
+; Maximum fan-out                             ; 132           ;
+; Total fan-out                               ; 7889          ;
+; Average fan-out                             ; 2.77          ;
++---------------------------------------------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Entity Name       ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------+--------------+
+; |ccct                                    ; 2236 (0)            ; 0 (0)                     ; 0           ; 104          ; 0       ; 52        ; 256  ; 0            ; |ccct                                                                           ; ccct              ; work         ;
+;    |clarke:u1|                           ; 766 (96)            ; 0 (0)                     ; 0           ; 32           ; 0       ; 16        ; 0    ; 0            ; |ccct|clarke:u1                                                                 ; clarke            ; work         ;
+;       |qmult:u1|                         ; 169 (32)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u1                                                        ; qmult             ; work         ;
+;          |lpm_add_sub:Add2|              ; 64 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u1|lpm_add_sub:Add2                                       ; lpm_add_sub       ; work         ;
+;             |add_sub_pvi:auto_generated| ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u1|lpm_add_sub:Add2|add_sub_pvi:auto_generated            ; add_sub_pvi       ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u1|lpm_mult:Mult0                                         ; lpm_mult          ; work         ;
+;             |mult_3ht:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u1|lpm_mult:Mult0|mult_3ht:auto_generated                 ; mult_3ht          ; work         ;
+;       |qmult:u2|                         ; 166 (93)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u2                                                        ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u2|lpm_mult:Mult0                                         ; lpm_mult          ; work         ;
+;             |mult_3ht:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u2|lpm_mult:Mult0|mult_3ht:auto_generated                 ; mult_3ht          ; work         ;
+;       |qmult:u4|                         ; 169 (32)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u4                                                        ; qmult             ; work         ;
+;          |lpm_add_sub:Add2|              ; 64 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u4|lpm_add_sub:Add2                                       ; lpm_add_sub       ; work         ;
+;             |add_sub_pvi:auto_generated| ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u4|lpm_add_sub:Add2|add_sub_pvi:auto_generated            ; add_sub_pvi       ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u4|lpm_mult:Mult0                                         ; lpm_mult          ; work         ;
+;             |mult_3ht:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u4|lpm_mult:Mult0|mult_3ht:auto_generated                 ; mult_3ht          ; work         ;
+;       |qmult:u5|                         ; 166 (93)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u5                                                        ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u5|lpm_mult:Mult0                                         ; lpm_mult          ; work         ;
+;             |mult_3ht:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|clarke:u1|qmult:u5|lpm_mult:Mult0|mult_3ht:auto_generated                 ; mult_3ht          ; work         ;
+;    |park:u2|                             ; 650 (32)            ; 0 (0)                     ; 0           ; 32           ; 0       ; 16        ; 0    ; 0            ; |ccct|park:u2                                                                   ; park              ; work         ;
+;       |qmult:u1|                         ; 202 (65)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u1                                                          ; qmult             ; work         ;
+;          |lpm_add_sub:Add2|              ; 64 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ccct|park:u2|qmult:u1|lpm_add_sub:Add2                                         ; lpm_add_sub       ; work         ;
+;             |add_sub_pvi:auto_generated| ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ccct|park:u2|qmult:u1|lpm_add_sub:Add2|add_sub_pvi:auto_generated              ; add_sub_pvi       ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u1|lpm_mult:Mult0                                           ; lpm_mult          ; work         ;
+;             |mult_3dt:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u1|lpm_mult:Mult0|mult_3dt:auto_generated                   ; mult_3dt          ; work         ;
+;       |qmult:u2|                         ; 107 (34)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u2                                                          ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u2|lpm_mult:Mult0                                           ; lpm_mult          ; work         ;
+;             |mult_3dt:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u2|lpm_mult:Mult0|mult_3dt:auto_generated                   ; mult_3dt          ; work         ;
+;       |qmult:u3|                         ; 138 (65)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u3                                                          ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u3|lpm_mult:Mult0                                           ; lpm_mult          ; work         ;
+;             |mult_3dt:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u3|lpm_mult:Mult0|mult_3dt:auto_generated                   ; mult_3dt          ; work         ;
+;       |qmult:u4|                         ; 171 (98)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u4                                                          ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u4|lpm_mult:Mult0                                           ; lpm_mult          ; work         ;
+;             |mult_3dt:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|park:u2|qmult:u4|lpm_mult:Mult0|mult_3dt:auto_generated                   ; mult_3dt          ; work         ;
+;    |parkClarkeInverse:u3|                ; 820 (128)           ; 0 (0)                     ; 0           ; 40           ; 0       ; 20        ; 0    ; 0            ; |ccct|parkClarkeInverse:u3                                                      ; parkClarkeInverse ; work         ;
+;       |qmult:u1|                         ; 138 (1)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u1                                             ; qmult             ; work         ;
+;          |lpm_add_sub:Add2|              ; 64 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u1|lpm_add_sub:Add2                            ; lpm_add_sub       ; work         ;
+;             |add_sub_pvi:auto_generated| ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u1|lpm_add_sub:Add2|add_sub_pvi:auto_generated ; add_sub_pvi       ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u1|lpm_mult:Mult0                              ; lpm_mult          ; work         ;
+;             |mult_3dt:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u1|lpm_mult:Mult0|mult_3dt:auto_generated      ; mult_3dt          ; work         ;
+;       |qmult:u2|                         ; 170 (97)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u2                                             ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u2|lpm_mult:Mult0                              ; lpm_mult          ; work         ;
+;             |mult_3dt:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u2|lpm_mult:Mult0|mult_3dt:auto_generated      ; mult_3dt          ; work         ;
+;       |qmult:u3|                         ; 139 (66)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u3                                             ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u3|lpm_mult:Mult0                              ; lpm_mult          ; work         ;
+;             |mult_3dt:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u3|lpm_mult:Mult0|mult_3dt:auto_generated      ; mult_3dt          ; work         ;
+;       |qmult:u4|                         ; 107 (34)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u4                                             ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u4|lpm_mult:Mult0                              ; lpm_mult          ; work         ;
+;             |mult_3dt:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u4|lpm_mult:Mult0|mult_3dt:auto_generated      ; mult_3dt          ; work         ;
+;       |qmult:u5|                         ; 138 (65)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u5                                             ; qmult             ; work         ;
+;          |lpm_mult:Mult0|                ; 73 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u5|lpm_mult:Mult0                              ; lpm_mult          ; work         ;
+;             |mult_3ht:auto_generated|    ; 73 (73)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |ccct|parkClarkeInverse:u3|qmult:u5|lpm_mult:Mult0|mult_3ht:auto_generated      ; mult_3ht          ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 52          ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 104         ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 52          ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clarke:u1|qmult:u1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; Q              ; 28    ; Signed Integer                         ;
+; N              ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clarke:u1|qmult:u2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; Q              ; 28    ; Signed Integer                         ;
+; N              ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clarke:u1|qmult:u3 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; Q              ; 28    ; Signed Integer                         ;
+; N              ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clarke:u1|qmult:u4 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; Q              ; 28    ; Signed Integer                         ;
+; N              ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clarke:u1|qmult:u5 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; Q              ; 28    ; Signed Integer                         ;
+; N              ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: park:u2|qmult:u1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; Q              ; 28    ; Signed Integer                       ;
+; N              ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: park:u2|qmult:u2 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; Q              ; 28    ; Signed Integer                       ;
+; N              ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: park:u2|qmult:u3 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; Q              ; 28    ; Signed Integer                       ;
+; N              ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: park:u2|qmult:u4 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; Q              ; 28    ; Signed Integer                       ;
+; N              ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u1 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; Q              ; 28    ; Signed Integer                                    ;
+; N              ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u2 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; Q              ; 28    ; Signed Integer                                    ;
+; N              ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u3 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; Q              ; 28    ; Signed Integer                                    ;
+; N              ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u4 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; Q              ; 28    ; Signed Integer                                    ;
+; N              ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: parkClarkeInverse:u3|qmult:u5 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; Q              ; 28    ; Signed Integer                                    ;
+; N              ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u2|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------+
+; Parameter Name                                 ; Value        ; Type                          ;
++------------------------------------------------+--------------+-------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                ;
+; LPM_WIDTHA                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHB                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHP                                     ; 62           ; Untyped                       ;
+; LPM_WIDTHR                                     ; 62           ; Untyped                       ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                       ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                       ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                       ;
+; LATENCY                                        ; 0            ; Untyped                       ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; USE_EAB                                        ; OFF          ; Untyped                       ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                       ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                       ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                       ;
+; CBXI_PARAMETER                                 ; mult_3dt     ; Untyped                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                       ;
++------------------------------------------------+--------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: park:u2|qmult:u1|lpm_mult:Mult0    ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31           ; Untyped             ;
+; LPM_WIDTHB                                     ; 31           ; Untyped             ;
+; LPM_WIDTHP                                     ; 62           ; Untyped             ;
+; LPM_WIDTHR                                     ; 62           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: park:u2|qmult:u1|lpm_add_sub:Add2 ;
++------------------------+--------------+--------------------------------------------+
+; Parameter Name         ; Value        ; Type                                       ;
++------------------------+--------------+--------------------------------------------+
+; LPM_WIDTH              ; 32           ; Untyped                                    ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                    ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                    ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                    ;
+; LPM_PIPELINE           ; 0            ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                    ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                    ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                    ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                         ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                    ;
+; USE_WYS                ; OFF          ; Untyped                                    ;
+; STYLE                  ; FAST         ; Untyped                                    ;
+; CBXI_PARAMETER         ; add_sub_pvi  ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                             ;
++------------------------+--------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u5|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------+
+; Parameter Name                                 ; Value        ; Type                          ;
++------------------------------------------------+--------------+-------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                ;
+; LPM_WIDTHA                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHB                                     ; 28           ; Untyped                       ;
+; LPM_WIDTHP                                     ; 59           ; Untyped                       ;
+; LPM_WIDTHR                                     ; 59           ; Untyped                       ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                       ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                       ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                       ;
+; LATENCY                                        ; 0            ; Untyped                       ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                       ;
+; USE_EAB                                        ; OFF          ; Untyped                       ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                       ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                       ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                       ;
+; CBXI_PARAMETER                                 ; mult_3ht     ; Untyped                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                       ;
++------------------------------------------------+--------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u1|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------+
+; Parameter Name                                 ; Value        ; Type                          ;
++------------------------------------------------+--------------+-------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                ;
+; LPM_WIDTHA                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHB                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHP                                     ; 62           ; Untyped                       ;
+; LPM_WIDTHR                                     ; 62           ; Untyped                       ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                       ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                       ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                       ;
+; LATENCY                                        ; 0            ; Untyped                       ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; USE_EAB                                        ; OFF          ; Untyped                       ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                       ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                       ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                       ;
+; CBXI_PARAMETER                                 ; mult_3dt     ; Untyped                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                       ;
++------------------------------------------------+--------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u1|lpm_add_sub:Add2 ;
++------------------------+--------------+---------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                    ;
++------------------------+--------------+---------------------------------------------------------+
+; LPM_WIDTH              ; 32           ; Untyped                                                 ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                                 ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                                 ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                                 ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                 ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                 ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                 ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                 ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                 ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                      ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                 ;
+; USE_WYS                ; OFF          ; Untyped                                                 ;
+; STYLE                  ; FAST         ; Untyped                                                 ;
+; CBXI_PARAMETER         ; add_sub_pvi  ; Untyped                                                 ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                            ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                          ;
++------------------------+--------------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u3|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------+
+; Parameter Name                                 ; Value        ; Type                          ;
++------------------------------------------------+--------------+-------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                ;
+; LPM_WIDTHA                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHB                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHP                                     ; 62           ; Untyped                       ;
+; LPM_WIDTHR                                     ; 62           ; Untyped                       ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                       ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                       ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                       ;
+; LATENCY                                        ; 0            ; Untyped                       ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; USE_EAB                                        ; OFF          ; Untyped                       ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                       ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                       ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                       ;
+; CBXI_PARAMETER                                 ; mult_3dt     ; Untyped                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                       ;
++------------------------------------------------+--------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: park:u2|qmult:u4|lpm_mult:Mult0    ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31           ; Untyped             ;
+; LPM_WIDTHB                                     ; 31           ; Untyped             ;
+; LPM_WIDTHP                                     ; 62           ; Untyped             ;
+; LPM_WIDTHR                                     ; 62           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u4|lpm_mult:Mult0  ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31           ; Untyped             ;
+; LPM_WIDTHB                                     ; 28           ; Untyped             ;
+; LPM_WIDTHP                                     ; 59           ; Untyped             ;
+; LPM_WIDTHR                                     ; 59           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3ht     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u4|lpm_add_sub:Add2 ;
++------------------------+--------------+----------------------------------------------+
+; Parameter Name         ; Value        ; Type                                         ;
++------------------------+--------------+----------------------------------------------+
+; LPM_WIDTH              ; 32           ; Untyped                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                      ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                      ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                      ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                      ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                      ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                      ;
+; USE_WYS                ; OFF          ; Untyped                                      ;
+; STYLE                  ; FAST         ; Untyped                                      ;
+; CBXI_PARAMETER         ; add_sub_pvi  ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                               ;
++------------------------+--------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u1|lpm_mult:Mult0  ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31           ; Untyped             ;
+; LPM_WIDTHB                                     ; 28           ; Untyped             ;
+; LPM_WIDTHP                                     ; 59           ; Untyped             ;
+; LPM_WIDTHR                                     ; 59           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3ht     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u1|lpm_add_sub:Add2 ;
++------------------------+--------------+----------------------------------------------+
+; Parameter Name         ; Value        ; Type                                         ;
++------------------------+--------------+----------------------------------------------+
+; LPM_WIDTH              ; 32           ; Untyped                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                      ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                      ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                      ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                      ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                      ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                      ;
+; USE_WYS                ; OFF          ; Untyped                                      ;
+; STYLE                  ; FAST         ; Untyped                                      ;
+; CBXI_PARAMETER         ; add_sub_pvi  ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                               ;
++------------------------+--------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: parkClarkeInverse:u3|qmult:u4|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------+
+; Parameter Name                                 ; Value        ; Type                          ;
++------------------------------------------------+--------------+-------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                ;
+; LPM_WIDTHA                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHB                                     ; 31           ; Untyped                       ;
+; LPM_WIDTHP                                     ; 62           ; Untyped                       ;
+; LPM_WIDTHR                                     ; 62           ; Untyped                       ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                       ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                       ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                       ;
+; LATENCY                                        ; 0            ; Untyped                       ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                       ;
+; USE_EAB                                        ; OFF          ; Untyped                       ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                       ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                       ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                       ;
+; CBXI_PARAMETER                                 ; mult_3dt     ; Untyped                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                       ;
++------------------------------------------------+--------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u5|lpm_mult:Mult0  ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31           ; Untyped             ;
+; LPM_WIDTHB                                     ; 28           ; Untyped             ;
+; LPM_WIDTHP                                     ; 59           ; Untyped             ;
+; LPM_WIDTHR                                     ; 59           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3ht     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: clarke:u1|qmult:u2|lpm_mult:Mult0  ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31           ; Untyped             ;
+; LPM_WIDTHB                                     ; 28           ; Untyped             ;
+; LPM_WIDTHP                                     ; 59           ; Untyped             ;
+; LPM_WIDTHR                                     ; 59           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3ht     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: park:u2|qmult:u3|lpm_mult:Mult0    ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31           ; Untyped             ;
+; LPM_WIDTHB                                     ; 31           ; Untyped             ;
+; LPM_WIDTHP                                     ; 62           ; Untyped             ;
+; LPM_WIDTHR                                     ; 62           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: park:u2|qmult:u2|lpm_mult:Mult0    ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31           ; Untyped             ;
+; LPM_WIDTHB                                     ; 31           ; Untyped             ;
+; LPM_WIDTHP                                     ; 62           ; Untyped             ;
+; LPM_WIDTHR                                     ; 62           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                       ;
++---------------------------------------+----------------------------------------------+
+; Name                                  ; Value                                        ;
++---------------------------------------+----------------------------------------------+
+; Number of entity instances            ; 13                                           ;
+; Entity Instance                       ; parkClarkeInverse:u3|qmult:u2|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 31                                           ;
+;     -- LPM_WIDTHP                     ; 62                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; park:u2|qmult:u1|lpm_mult:Mult0              ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 31                                           ;
+;     -- LPM_WIDTHP                     ; 62                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; parkClarkeInverse:u3|qmult:u5|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 28                                           ;
+;     -- LPM_WIDTHP                     ; 59                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                          ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; parkClarkeInverse:u3|qmult:u1|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 31                                           ;
+;     -- LPM_WIDTHP                     ; 62                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; parkClarkeInverse:u3|qmult:u3|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 31                                           ;
+;     -- LPM_WIDTHP                     ; 62                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; park:u2|qmult:u4|lpm_mult:Mult0              ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 31                                           ;
+;     -- LPM_WIDTHP                     ; 62                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; clarke:u1|qmult:u4|lpm_mult:Mult0            ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 28                                           ;
+;     -- LPM_WIDTHP                     ; 59                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                          ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; clarke:u1|qmult:u1|lpm_mult:Mult0            ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 28                                           ;
+;     -- LPM_WIDTHP                     ; 59                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                          ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; parkClarkeInverse:u3|qmult:u4|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 31                                           ;
+;     -- LPM_WIDTHP                     ; 62                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; clarke:u1|qmult:u5|lpm_mult:Mult0            ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 28                                           ;
+;     -- LPM_WIDTHP                     ; 59                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                          ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; clarke:u1|qmult:u2|lpm_mult:Mult0            ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 28                                           ;
+;     -- LPM_WIDTHP                     ; 59                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                          ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; park:u2|qmult:u3|lpm_mult:Mult0              ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 31                                           ;
+;     -- LPM_WIDTHP                     ; 62                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
+; Entity Instance                       ; park:u2|qmult:u2|lpm_mult:Mult0              ;
+;     -- LPM_WIDTHA                     ; 31                                           ;
+;     -- LPM_WIDTHB                     ; 31                                           ;
+;     -- LPM_WIDTHP                     ; 62                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
++---------------------------------------+----------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "parkClarkeInverse:u3|qmult:u5" ;
++----------------------+-------+----------+-----------------+
+; Port                 ; Type  ; Severity ; Details         ;
++----------------------+-------+----------+-----------------+
+; i_multiplier[27..26] ; Input ; Info     ; Stuck at VCC    ;
+; i_multiplier[24..22] ; Input ; Info     ; Stuck at VCC    ;
+; i_multiplier[20..19] ; Input ; Info     ; Stuck at VCC    ;
+; i_multiplier[17..16] ; Input ; Info     ; Stuck at VCC    ;
+; i_multiplier[13..10] ; Input ; Info     ; Stuck at VCC    ;
+; i_multiplier[6..4]   ; Input ; Info     ; Stuck at VCC    ;
+; i_multiplier[31..28] ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[15..14] ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[1..0]   ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[25]     ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[21]     ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[18]     ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[9]      ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[8]      ; Input ; Info     ; Stuck at VCC    ;
+; i_multiplier[7]      ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[3]      ; Input ; Info     ; Stuck at GND    ;
+; i_multiplier[2]      ; Input ; Info     ; Stuck at VCC    ;
++----------------------+-------+----------+-----------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "clarke:u1|qmult:u5"         ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; i_multiplier[21..18] ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[15..14] ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[9..7]   ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[31..28] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[26..25] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[23..22] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[17..16] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[11..10] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[4..2]   ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[27]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[24]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[13]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[12]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[6]      ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[5]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[1]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[0]      ; Input ; Info     ; Stuck at GND ;
++----------------------+-------+----------+--------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "clarke:u1|qmult:u4"         ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; i_multiplier[21..18] ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[15..14] ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[9..7]   ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[31..28] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[26..25] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[23..22] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[17..16] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[11..10] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[4..2]   ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[27]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[24]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[13]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[12]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[6]      ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[5]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[1]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[0]      ; Input ; Info     ; Stuck at GND ;
++----------------------+-------+----------+--------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "clarke:u1|qmult:u3"         ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; i_multiplier[21..18] ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[15..14] ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[9..7]   ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[31..28] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[26..25] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[23..22] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[17..16] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[11..10] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[4..2]   ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[27]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[24]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[13]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[12]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[6]      ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[5]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[1]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[0]      ; Input ; Info     ; Stuck at GND ;
++----------------------+-------+----------+--------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "clarke:u1|qmult:u2"         ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; i_multiplier[21..18] ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[15..14] ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[9..7]   ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[31..28] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[26..25] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[23..22] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[17..16] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[11..10] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[4..2]   ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[27]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[24]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[13]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[12]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[6]      ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[5]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[1]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[0]      ; Input ; Info     ; Stuck at GND ;
++----------------------+-------+----------+--------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "clarke:u1|qmult:u1"         ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; i_multiplier[31..28] ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[27]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[26]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[25]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[24]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[23]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[22]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[21]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[20]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[19]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[18]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[17]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[16]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[15]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[14]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[13]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[12]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[11]     ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[10]     ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[9]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[8]      ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[7]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[6]      ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[5]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[4]      ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[3]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[2]      ; Input ; Info     ; Stuck at GND ;
+; i_multiplier[1]      ; Input ; Info     ; Stuck at VCC ;
+; i_multiplier[0]      ; Input ; Info     ; Stuck at GND ;
++----------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 256                         ;
+; cycloneiii_lcell_comb ; 2236                        ;
+;     arith             ; 1908                        ;
+;         2 data inputs ; 334                         ;
+;         3 data inputs ; 1574                        ;
+;     normal            ; 328                         ;
+;         0 data inputs ; 13                          ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 102                         ;
+;         3 data inputs ; 188                         ;
+; cycloneiii_mac_mult   ; 52                          ;
+; cycloneiii_mac_out    ; 52                          ;
+;                       ;                             ;
+; Max LUT depth         ; 31.50                       ;
+; Average LUT depth     ; 15.88                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+    Info: Processing started: Tue Apr 21 09:24:01 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ccct -c ccct
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 6 design units, including 6 entities, in source file ccct.v
+    Info (12023): Found entity 1: mem File: D:/intelFPGA_lite/ccct/ccct.v Line: 15
+    Info (12023): Found entity 2: park File: D:/intelFPGA_lite/ccct/ccct.v Line: 34
+    Info (12023): Found entity 3: clarke File: D:/intelFPGA_lite/ccct/ccct.v Line: 48
+    Info (12023): Found entity 4: parkClarkeInverse File: D:/intelFPGA_lite/ccct/ccct.v Line: 65
+    Info (12023): Found entity 5: ccct File: D:/intelFPGA_lite/ccct/ccct.v Line: 90
+    Info (12023): Found entity 6: qmult File: D:/intelFPGA_lite/ccct/ccct.v Line: 104
+Info (12127): Elaborating entity "ccct" for the top level hierarchy
+Info (12128): Elaborating entity "clarke" for hierarchy "clarke:u1" File: D:/intelFPGA_lite/ccct/ccct.v Line: 94
+Info (12128): Elaborating entity "qmult" for hierarchy "clarke:u1|qmult:u1" File: D:/intelFPGA_lite/ccct/ccct.v Line: 52
+Warning (10036): Verilog HDL or VHDL warning at ccct.v(115): object "ovr" assigned a value but never read File: D:/intelFPGA_lite/ccct/ccct.v Line: 115
+Warning (10235): Verilog HDL Always Construct warning at ccct.v(157): variable "multiplicand" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/intelFPGA_lite/ccct/ccct.v Line: 157
+Warning (10235): Verilog HDL Always Construct warning at ccct.v(157): variable "multiplier" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/intelFPGA_lite/ccct/ccct.v Line: 157
+Info (12128): Elaborating entity "park" for hierarchy "park:u2" File: D:/intelFPGA_lite/ccct/ccct.v Line: 97
+Info (12128): Elaborating entity "parkClarkeInverse" for hierarchy "parkClarkeInverse:u3" File: D:/intelFPGA_lite/ccct/ccct.v Line: 100
+Info (278001): Inferred 17 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "parkClarkeInverse:u3|qmult:u2|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "park:u2|qmult:u1|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "park:u2|qmult:u1|Add2" File: D:/intelFPGA_lite/ccct/ccct.v Line: 163
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "parkClarkeInverse:u3|qmult:u5|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "parkClarkeInverse:u3|qmult:u1|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "parkClarkeInverse:u3|qmult:u1|Add2" File: D:/intelFPGA_lite/ccct/ccct.v Line: 163
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "parkClarkeInverse:u3|qmult:u3|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "park:u2|qmult:u4|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "clarke:u1|qmult:u4|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "clarke:u1|qmult:u4|Add2" File: D:/intelFPGA_lite/ccct/ccct.v Line: 163
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "clarke:u1|qmult:u1|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "clarke:u1|qmult:u1|Add2" File: D:/intelFPGA_lite/ccct/ccct.v Line: 163
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "parkClarkeInverse:u3|qmult:u4|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "clarke:u1|qmult:u5|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "clarke:u1|qmult:u2|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "park:u2|qmult:u3|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "park:u2|qmult:u2|Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+Info (12130): Elaborated megafunction instantiation "parkClarkeInverse:u3|qmult:u2|lpm_mult:Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+Info (12133): Instantiated megafunction "parkClarkeInverse:u3|qmult:u2|lpm_mult:Mult0" with the following parameter: File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (12134): Parameter "LPM_WIDTHA" = "31"
+    Info (12134): Parameter "LPM_WIDTHB" = "31"
+    Info (12134): Parameter "LPM_WIDTHP" = "62"
+    Info (12134): Parameter "LPM_WIDTHR" = "62"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_3dt.tdf
+    Info (12023): Found entity 1: mult_3dt File: D:/intelFPGA_lite/ccct/db/mult_3dt.tdf Line: 31
+Info (12130): Elaborated megafunction instantiation "park:u2|qmult:u1|lpm_add_sub:Add2" File: D:/intelFPGA_lite/ccct/ccct.v Line: 163
+Info (12133): Instantiated megafunction "park:u2|qmult:u1|lpm_add_sub:Add2" with the following parameter: File: D:/intelFPGA_lite/ccct/ccct.v Line: 163
+    Info (12134): Parameter "LPM_WIDTH" = "32"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_pvi.tdf
+    Info (12023): Found entity 1: add_sub_pvi File: D:/intelFPGA_lite/ccct/db/add_sub_pvi.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "parkClarkeInverse:u3|qmult:u5|lpm_mult:Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+Info (12133): Instantiated megafunction "parkClarkeInverse:u3|qmult:u5|lpm_mult:Mult0" with the following parameter: File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (12134): Parameter "LPM_WIDTHA" = "31"
+    Info (12134): Parameter "LPM_WIDTHB" = "28"
+    Info (12134): Parameter "LPM_WIDTHP" = "59"
+    Info (12134): Parameter "LPM_WIDTHR" = "59"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_3ht.tdf
+    Info (12023): Found entity 1: mult_3ht File: D:/intelFPGA_lite/ccct/db/mult_3ht.tdf Line: 31
+Info (12130): Elaborated megafunction instantiation "clarke:u1|qmult:u4|lpm_mult:Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+Info (12133): Instantiated megafunction "clarke:u1|qmult:u4|lpm_mult:Mult0" with the following parameter: File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (12134): Parameter "LPM_WIDTHA" = "31"
+    Info (12134): Parameter "LPM_WIDTHB" = "28"
+    Info (12134): Parameter "LPM_WIDTHP" = "59"
+    Info (12134): Parameter "LPM_WIDTHR" = "59"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12130): Elaborated megafunction instantiation "clarke:u1|qmult:u1|lpm_mult:Mult0" File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+Info (12133): Instantiated megafunction "clarke:u1|qmult:u1|lpm_mult:Mult0" with the following parameter: File: D:/intelFPGA_lite/ccct/ccct.v Line: 150
+    Info (12134): Parameter "LPM_WIDTHA" = "31"
+    Info (12134): Parameter "LPM_WIDTHB" = "28"
+    Info (12134): Parameter "LPM_WIDTHP" = "59"
+    Info (12134): Parameter "LPM_WIDTHR" = "59"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (13014): Ignored 2559 buffer(s)
+    Info (13019): Ignored 2559 SOFT buffer(s)
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file D:/intelFPGA_lite/ccct/output_files/ccct.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2596 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 160 input pins
+    Info (21059): Implemented 96 output pins
+    Info (21061): Implemented 2236 logic cells
+    Info (21062): Implemented 104 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4780 megabytes
+    Info: Processing ended: Tue Apr 21 09:24:15 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:30
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/intelFPGA_lite/ccct/output_files/ccct.map.smsg.
+
+

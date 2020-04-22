@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Apr 21 09:24:15 2020
+Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+Revision Name : ccct
+Top-level Entity Name : ccct
+Family : Cyclone IV E
+Total logic elements : 2,236
+    Total combinational functions : 2,236
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 256
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 104
+Total PLLs : 0

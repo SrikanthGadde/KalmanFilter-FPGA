@@ -1,0 +1,317 @@
+
+
+//TODO  //LUT
+
+module sine(out);
+  	output reg signed [31:0] out;
+	reg [31:0] sinewave;
+    
+	reg [31:0]	theta;
+    
+  	always @(*)
+    	begin
+			case(theta[31:24])
+                8'd0: sinewave <= 32'h00000000;
+                8'd1: sinewave <= 32'h0064ea3c;
+                8'd2: sinewave <= 32'h00c9c4ca;
+                8'd3: sinewave <= 32'h012e7ffc;
+                8'd4: sinewave <= 32'h01930c2b;
+                8'd5: sinewave <= 32'h01f759b6;
+                8'd6: sinewave <= 32'h025b5906;
+                8'd7: sinewave <= 32'h02befa91;
+                8'd8: sinewave <= 32'h03222edb;
+                8'd9: sinewave <= 32'h0384e678;
+                8'd10: sinewave <= 32'h03e71212;
+                8'd11: sinewave <= 32'h0448a266;
+                8'd12: sinewave <= 32'h04a9884b;
+                8'd13: sinewave <= 32'h0509b4b1;
+                8'd14: sinewave <= 32'h056918a6;
+                8'd15: sinewave <= 32'h05c7a557;
+                8'd16: sinewave <= 32'h06254c11;
+                8'd17: sinewave <= 32'h0681fe48;
+                8'd18: sinewave <= 32'h06ddad92;
+                8'd19: sinewave <= 32'h07384bb0;
+                8'd20: sinewave <= 32'h0791ca8c;
+                8'd21: sinewave <= 32'h07ea1c3e;
+                8'd22: sinewave <= 32'h0841330c;
+                8'd23: sinewave <= 32'h0897016d;
+                8'd24: sinewave <= 32'h08eb7a0b;
+                8'd25: sinewave <= 32'h093e8fc5;
+                8'd26: sinewave <= 32'h099035b2;
+                8'd27: sinewave <= 32'h09e05f20;
+                8'd28: sinewave <= 32'h0a2eff9b;
+                8'd29: sinewave <= 32'h0a7c0aeb;
+                8'd30: sinewave <= 32'h0ac77515;
+                8'd31: sinewave <= 32'h0b113261;
+                8'd32: sinewave <= 32'h0b59375b;
+                8'd33: sinewave <= 32'h0b9f78cf;
+                8'd34: sinewave <= 32'h0be3ebd4;
+                8'd35: sinewave <= 32'h0c2685c5;
+                8'd36: sinewave <= 32'h0c673c48;
+                8'd37: sinewave <= 32'h0ca60550;
+                8'd38: sinewave <= 32'h0ce2d71a;
+                8'd39: sinewave <= 32'h0d1da832;
+                8'd40: sinewave <= 32'h0d566f74;
+                8'd41: sinewave <= 32'h0d8d240d;
+                8'd42: sinewave <= 32'h0dc1bd7d;
+                8'd43: sinewave <= 32'h0df43396;
+                8'd44: sinewave <= 32'h0e247e82;
+                8'd45: sinewave <= 32'h0e5296be;
+                8'd46: sinewave <= 32'h0e7e7521;
+                8'd47: sinewave <= 32'h0ea812d9;
+                8'd48: sinewave <= 32'h0ecf696f;
+                8'd49: sinewave <= 32'h0ef472c5;
+                8'd50: sinewave <= 32'h0f17291a;
+                8'd51: sinewave <= 32'h0f378709;
+                8'd52: sinewave <= 32'h0f55878a;
+                8'd53: sinewave <= 32'h0f7125f3;
+                8'd54: sinewave <= 32'h0f8a5dfa;
+                8'd55: sinewave <= 32'h0fa12bb3;
+                8'd56: sinewave <= 32'h0fb58b93;
+                8'd57: sinewave <= 32'h0fc77a6f;
+                8'd58: sinewave <= 32'h0fd6f57d;
+                8'd59: sinewave <= 32'h0fe3fa57;
+                8'd60: sinewave <= 32'h0fee86f5;
+                8'd61: sinewave <= 32'h0ff699b4;
+                8'd62: sinewave <= 32'h0ffc3154;
+                8'd63: sinewave <= 32'h0fff4cf4;
+                8'd64: sinewave <= 32'h0fffec1b;
+                8'd65: sinewave <= 32'h0ffe0eae;
+                8'd66: sinewave <= 32'h0ff9b4f8;
+                8'd67: sinewave <= 32'h0ff2dfa7;
+                8'd68: sinewave <= 32'h0fe98fca;
+                8'd69: sinewave <= 32'h0fddc6d4;
+                8'd70: sinewave <= 32'h0fcf8699;
+                8'd71: sinewave <= 32'h0fbed150;
+                8'd72: sinewave <= 32'h0faba993;
+                8'd73: sinewave <= 32'h0f96125b;
+                8'd74: sinewave <= 32'h0f7e0f04;
+                8'd75: sinewave <= 32'h0f63a349;
+                8'd76: sinewave <= 32'h0f46d344;
+                8'd77: sinewave <= 32'h0f27a371;
+                8'd78: sinewave <= 32'h0f0618a8;
+                8'd79: sinewave <= 32'h0ee23820;
+                8'd80: sinewave <= 32'h0ebc076c;
+                8'd81: sinewave <= 32'h0e938c7c;
+                8'd82: sinewave <= 32'h0e68cd9a;
+                8'd83: sinewave <= 32'h0e3bd16a;
+                8'd84: sinewave <= 32'h0e0c9eec;
+                8'd85: sinewave <= 32'h0ddb3d74;
+                8'd86: sinewave <= 32'h0da7b4af;
+                8'd87: sinewave <= 32'h0d720ca0;
+                8'd88: sinewave <= 32'h0d3a4d9d;
+                8'd89: sinewave <= 32'h0d008050;
+                8'd90: sinewave <= 32'h0cc4adb6;
+                8'd91: sinewave <= 32'h0c86df1a;
+                8'd92: sinewave <= 32'h0c471e17;
+                8'd93: sinewave <= 32'h0c057496;
+                8'd94: sinewave <= 32'h0bc1eccb;
+                8'd95: sinewave <= 32'h0b7c9136;
+                8'd96: sinewave <= 32'h0b356c9d;
+                8'd97: sinewave <= 32'h0aec8a10;
+                8'd98: sinewave <= 32'h0aa1f4e1;
+                8'd99: sinewave <= 32'h0a55b8a9;
+                8'd100: sinewave <= 32'h0a07e141;
+                8'd101: sinewave <= 32'h09b87ac2;
+                8'd102: sinewave <= 32'h09679182;
+                8'd103: sinewave <= 32'h09153215;
+                8'd104: sinewave <= 32'h08c16948;
+                8'd105: sinewave <= 32'h086c4421;
+                8'd106: sinewave <= 32'h0815cfdc;
+                8'd107: sinewave <= 32'h07be19e7;
+                8'd108: sinewave <= 32'h07652fe6;
+                8'd109: sinewave <= 32'h070b1fa9;
+                8'd110: sinewave <= 32'h06aff72f;
+                8'd111: sinewave <= 32'h0653c4a5;
+                8'd112: sinewave <= 32'h05f6965d;
+                8'd113: sinewave <= 32'h05987ad3;
+                8'd114: sinewave <= 32'h053980a8;
+                8'd115: sinewave <= 32'h04d9b69e;
+                8'd116: sinewave <= 32'h04792b98;
+                8'd117: sinewave <= 32'h0417ee98;
+                8'd118: sinewave <= 32'h03b60eba;
+                8'd119: sinewave <= 32'h03539b35;
+                8'd120: sinewave <= 32'h02f0a355;
+                8'd121: sinewave <= 32'h028d367c;
+                8'd122: sinewave <= 32'h0229641e;
+                8'd123: sinewave <= 32'h01c53bbf;
+                8'd124: sinewave <= 32'h0160ccee;
+                8'd125: sinewave <= 32'h00fc2749;
+                8'd126: sinewave <= 32'h00975a74;
+                8'd127: sinewave <= 32'h00327619;
+                8'd128: sinewave <= 32'hffcd89e7;
+                8'd129: sinewave <= 32'hff68a58c;
+                8'd130: sinewave <= 32'hff03d8b7;
+                8'd131: sinewave <= 32'hfe9f3312;
+                8'd132: sinewave <= 32'hfe3ac441;
+                8'd133: sinewave <= 32'hfdd69be2;
+                8'd134: sinewave <= 32'hfd72c984;
+                8'd135: sinewave <= 32'hfd0f5cab;
+                8'd136: sinewave <= 32'hfcac64cb;
+                8'd137: sinewave <= 32'hfc49f146;
+                8'd138: sinewave <= 32'hfbe81168;
+                8'd139: sinewave <= 32'hfb86d468;
+                8'd140: sinewave <= 32'hfb264962;
+                8'd141: sinewave <= 32'hfac67f58;
+                8'd142: sinewave <= 32'hfa67852d;
+                8'd143: sinewave <= 32'hfa0969a3;
+                8'd144: sinewave <= 32'hf9ac3b5b;
+                8'd145: sinewave <= 32'hf95008d1;
+                8'd146: sinewave <= 32'hf8f4e057;
+                8'd147: sinewave <= 32'hf89ad01a;
+                8'd148: sinewave <= 32'hf841e619;
+                8'd149: sinewave <= 32'hf7ea3024;
+                8'd150: sinewave <= 32'hf793bbdf;
+                8'd151: sinewave <= 32'hf73e96b8;
+                8'd152: sinewave <= 32'hf6eacdeb;
+                8'd153: sinewave <= 32'hf6986e7e;
+                8'd154: sinewave <= 32'hf647853e;
+                8'd155: sinewave <= 32'hf5f81ebf;
+                8'd156: sinewave <= 32'hf5aa4757;
+                8'd157: sinewave <= 32'hf55e0b1f;
+                8'd158: sinewave <= 32'hf51375f0;
+                8'd159: sinewave <= 32'hf4ca9363;
+                8'd160: sinewave <= 32'hf4836eca;
+                8'd161: sinewave <= 32'hf43e1335;
+                8'd162: sinewave <= 32'hf3fa8b6a;
+                8'd163: sinewave <= 32'hf3b8e1e9;
+                8'd164: sinewave <= 32'hf37920e6;
+                8'd165: sinewave <= 32'hf33b524a;
+                8'd166: sinewave <= 32'hf2ff7fb0;
+                8'd167: sinewave <= 32'hf2c5b263;
+                8'd168: sinewave <= 32'hf28df360;
+                8'd169: sinewave <= 32'hf2584b51;
+                8'd170: sinewave <= 32'hf224c28c;
+                8'd171: sinewave <= 32'hf1f36114;
+                8'd172: sinewave <= 32'hf1c42e96;
+                8'd173: sinewave <= 32'hf1973266;
+                8'd174: sinewave <= 32'hf16c7384;
+                8'd175: sinewave <= 32'hf143f894;
+                8'd176: sinewave <= 32'hf11dc7e0;
+                8'd177: sinewave <= 32'hf0f9e758;
+                8'd178: sinewave <= 32'hf0d85c8f;
+                8'd179: sinewave <= 32'hf0b92cbc;
+                8'd180: sinewave <= 32'hf09c5cb7;
+                8'd181: sinewave <= 32'hf081f0fc;
+                8'd182: sinewave <= 32'hf069eda5;
+                8'd183: sinewave <= 32'hf054566d;
+                8'd184: sinewave <= 32'hf0412eb0;
+                8'd185: sinewave <= 32'hf0307967;
+                8'd186: sinewave <= 32'hf022392c;
+                8'd187: sinewave <= 32'hf0167036;
+                8'd188: sinewave <= 32'hf00d2059;
+                8'd189: sinewave <= 32'hf0064b08;
+                8'd190: sinewave <= 32'hf001f152;
+                8'd191: sinewave <= 32'hf00013e5;
+                8'd192: sinewave <= 32'hf000b30c;
+                8'd193: sinewave <= 32'hf003ceac;
+                8'd194: sinewave <= 32'hf009664c;
+                8'd195: sinewave <= 32'hf011790b;
+                8'd196: sinewave <= 32'hf01c05a9;
+                8'd197: sinewave <= 32'hf0290a83;
+                8'd198: sinewave <= 32'hf0388591;
+                8'd199: sinewave <= 32'hf04a746d;
+                8'd200: sinewave <= 32'hf05ed44d;
+                8'd201: sinewave <= 32'hf075a206;
+                8'd202: sinewave <= 32'hf08eda0d;
+                8'd203: sinewave <= 32'hf0aa7876;
+                8'd204: sinewave <= 32'hf0c878f7;
+                8'd205: sinewave <= 32'hf0e8d6e6;
+                8'd206: sinewave <= 32'hf10b8d3b;
+                8'd207: sinewave <= 32'hf1309691;
+                8'd208: sinewave <= 32'hf157ed27;
+                8'd209: sinewave <= 32'hf1818adf;
+                8'd210: sinewave <= 32'hf1ad6942;
+                8'd211: sinewave <= 32'hf1db817e;
+                8'd212: sinewave <= 32'hf20bcc6a;
+                8'd213: sinewave <= 32'hf23e4283;
+                8'd214: sinewave <= 32'hf272dbf3;
+                8'd215: sinewave <= 32'hf2a9908c;
+                8'd216: sinewave <= 32'hf2e257ce;
+                8'd217: sinewave <= 32'hf31d28e6;
+                8'd218: sinewave <= 32'hf359fab0;
+                8'd219: sinewave <= 32'hf398c3b8;
+                8'd220: sinewave <= 32'hf3d97a3b;
+                8'd221: sinewave <= 32'hf41c142c;
+                8'd222: sinewave <= 32'hf4608731;
+                8'd223: sinewave <= 32'hf4a6c8a5;
+                8'd224: sinewave <= 32'hf4eecd9f;
+                8'd225: sinewave <= 32'hf5388aeb;
+                8'd226: sinewave <= 32'hf583f515;
+                8'd227: sinewave <= 32'hf5d10065;
+                8'd228: sinewave <= 32'hf61fa0e0;
+                8'd229: sinewave <= 32'hf66fca4e;
+                8'd230: sinewave <= 32'hf6c1703b;
+                8'd231: sinewave <= 32'hf71485f5;
+                8'd232: sinewave <= 32'hf768fe93;
+                8'd233: sinewave <= 32'hf7beccf4;
+                8'd234: sinewave <= 32'hf815e3c2;
+                8'd235: sinewave <= 32'hf86e3574;
+                8'd236: sinewave <= 32'hf8c7b450;
+                8'd237: sinewave <= 32'hf922526e;
+                8'd238: sinewave <= 32'hf97e01b8;
+                8'd239: sinewave <= 32'hf9dab3ef;
+                8'd240: sinewave <= 32'hfa385aa9;
+                8'd241: sinewave <= 32'hfa96e75a;
+                8'd242: sinewave <= 32'hfaf64b4f;
+                8'd243: sinewave <= 32'hfb5677b5;
+                8'd244: sinewave <= 32'hfbb75d9a;
+                8'd245: sinewave <= 32'hfc18edee;
+                8'd246: sinewave <= 32'hfc7b1988;
+                8'd247: sinewave <= 32'hfcddd125;
+                8'd248: sinewave <= 32'hfd41056f;
+                8'd249: sinewave <= 32'hfda4a6fa;
+                8'd250: sinewave <= 32'hfe08a64a;
+                8'd251: sinewave <= 32'hfe6cf3d5;
+                8'd252: sinewave <= 32'hfed18004;
+                8'd253: sinewave <= 32'hff363b36;
+                8'd254: sinewave <= 32'hff9b15c4;
+                8'd255: sinewave <= 32'h00000000;
+			endcase
+
+    	end
+endmodule
+
+/*
+1/sqrt(3) = 0000_1001_0011_1100_1101_0011_1010_0010
+
+sqrt(3)/2 = 0000_1101_1101_1011_0011_1101_0111_0100‬
+
+-1/sqrt(3) = 1111_0110_1100_0011_0010_1100_0101_1110
+
+-sqrt(3)/2 = 1111_0010_0010_0100_1100_0010_1000_1100
+*/
+
+module cp(output [31:0] id, output [31:0] iq, input [31:0] theta, input [31:0] ia, input [31:0] ib,  input [31:0] ic);
+
+//Add LUT
+
+iAlpha = ia;
+
+iBeta = ({ic*64'b0000_0000_0000_0000_0000_0000_0000_0000__1111_0110_1100_0011_0010_1100_0101_1110}+{ib*64'b0000_0000_0000_0000_0000_0000_0000_0000__0000_1001_0011_1100_1101_0011_1010_0010})>>28; //32-4
+
+iq = {iBeta*{32'd0,cos}}+{iAlpha*{32'd0,sin}}>>28;
+
+id = {iBeta*{32'd0,sin}}+{iAlpha*{32'd0,cos}}>>28;
+
+e_d = ids - id;
+
+e_q = iqs - iq;
+
+//vd vq 
+vd = {{kp_d*{32'd0,e_d}}+{{ki_d*{32'd0,e_d}}+{32'd0,i_d}}}>>28;
+
+vq = 
+//Integrator
+
+Vrx =   ({vd*{32'd0,sin}}+{vq*{32'd0,cos}})>>28;
+
+vAlpha = {vd*{32'd0,cos}}+{vq*(~{32'd0,sin}+64'd1)}>>28;
+
+vBeta_2 = Vrx>>1;
+
+Vry = {vAlpha * {32'd0,32'b0000_1101_1101_1011_0011_1101_0111_0100}}+(~{32'd0,vBeta_2}+64'd1)>>28;
+
+Vrz = (~{32'd0,vBeta_2}+64'd1) + (~{vAlpha * {32'd0,32'b0000_1101_1101_1011_0011_1101_0111_0100}}+64'd1);
+
+
