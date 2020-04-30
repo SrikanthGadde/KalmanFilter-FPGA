@@ -1,0 +1,229 @@
+# Reading D:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do sequential_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/intelFPGA_lite/sequential {D:/intelFPGA_lite/sequential/sequential.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:48:35 on Apr 30,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/intelFPGA_lite/sequential" D:/intelFPGA_lite/sequential/sequential.v 
+# -- Compiling module sequential
+# -- Compiling module add
+# -- Compiling module mult
+# 
+# Top level modules:
+# 	sequential
+# End time: 23:48:36 on Apr 30,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim work.sequential
+# vsim work.sequential 
+# Start time: 23:48:41 on Apr 30,2020
+# Loading work.sequential
+# Loading work.add
+# Loading work.mult
+add wave -position insertpoint  \
+sim:/sequential/clk \
+sim:/sequential/rst
+add wave -position insertpoint  \
+sim:/sequential/a \
+sim:/sequential/b \
+sim:/sequential/c \
+sim:/sequential/d
+add wave -position insertpoint  \
+sim:/sequential/ns \
+sim:/sequential/s
+force -freeze sim:/sequential/clk 0 0, 1 {50 ps} -r 100
+noforce sim:/sequential/rst
+force -freeze sim:/sequential/rst 1 0
+force -freeze sim:/sequential/a 1 0
+force -freeze sim:/sequential/b 2 0
+# Invalid binary digit: 2.
+# ** Error: (vsim-4011) Invalid force value: 2 0.
+# 
+force -freeze sim:/sequential/b 10 0
+force -freeze sim:/sequential/c 11 0
+force -freeze sim:/sequential/d 100 0
+add wave -position insertpoint  \
+sim:/sequential/w
+add wave -position insertpoint  \
+sim:/sequential/e
+add wave -position insertpoint  \
+sim:/sequential/q
+add wave -position insertpoint  \
+sim:/sequential/t
+add wave -position insertpoint  \
+sim:/sequential/y
+add wave -position insertpoint  \
+sim:/sequential/r
+add wave -position insertpoint  \
+sim:/sequential/u
+add wave -position insertpoint  \
+sim:/sequential/i
+run
+force -freeze sim:/sequential/rst 1 0
+run
+run
+force -freeze sim:/sequential/rst 0 0
+run
+run
+run
+add wave -position insertpoint  \
+sim:/sequential/out
+run
+vlog -reportprogress 300 -work work D:/intelFPGA_lite/sequential/sequential.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:53:17 on Apr 30,2020
+# vlog -reportprogress 300 -work work D:/intelFPGA_lite/sequential/sequential.v 
+# -- Compiling module sequential
+# -- Compiling module add
+# -- Compiling module mult
+# 
+# Top level modules:
+# 	sequential
+# End time: 23:53:17 on Apr 30,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.sequential
+# End time: 23:53:23 on Apr 30,2020, Elapsed time: 0:04:42
+# Errors: 1, Warnings: 0
+# vsim work.sequential 
+# Start time: 23:53:23 on Apr 30,2020
+# Loading work.sequential
+# Loading work.add
+# Loading work.mult
+add wave -position insertpoint  \
+sim:/sequential/clk \
+sim:/sequential/rst
+add wave -position insertpoint  \
+sim:/sequential/a \
+sim:/sequential/b \
+sim:/sequential/c \
+sim:/sequential/d
+add wave -position insertpoint  \
+sim:/sequential/ns \
+sim:/sequential/s
+add wave -position insertpoint  \
+sim:/sequential/out
+add wave -position insertpoint  \
+sim:/sequential/w
+add wave -position insertpoint  \
+sim:/sequential/e
+add wave -position insertpoint  \
+sim:/sequential/q
+add wave -position insertpoint  \
+sim:/sequential/t
+add wave -position insertpoint  \
+sim:/sequential/y
+add wave -position insertpoint  \
+sim:/sequential/r
+add wave -position insertpoint  \
+sim:/sequential/u
+add wave -position insertpoint  \
+sim:/sequential/i
+add wave -position insertpoint  \
+sim:/sequential/out
+force -freeze sim:/sequential/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/sequential/rst 1 0
+force -freeze sim:/sequential/a 0 0
+force -freeze sim:/sequential/b 1 0
+force -freeze sim:/sequential/a 1 0
+force -freeze sim:/sequential/b 10 0
+force -freeze sim:/sequential/c 11 0
+force -freeze sim:/sequential/d 100 0
+run
+run
+force -freeze sim:/sequential/rst 0 0
+run
+run
+run
+run
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+vlog -reportprogress 300 -work work D:/intelFPGA_lite/sequential/sequential.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:59:19 on Apr 30,2020
+# vlog -reportprogress 300 -work work D:/intelFPGA_lite/sequential/sequential.v 
+# -- Compiling module sequential
+# -- Compiling module add
+# -- Compiling module mult
+# 
+# Top level modules:
+# 	sequential
+# End time: 23:59:20 on Apr 30,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.sequential
+# End time: 23:59:26 on Apr 30,2020, Elapsed time: 0:06:03
+# Errors: 4, Warnings: 1
+# vsim work.sequential 
+# Start time: 23:59:26 on Apr 30,2020
+# Loading work.sequential
+# Loading work.add
+# Loading work.mult
+add wave -position insertpoint  \
+sim:/sequential/a \
+sim:/sequential/b \
+sim:/sequential/c \
+sim:/sequential/d
+add wave -position insertpoint  \
+sim:/sequential/clk \
+sim:/sequential/rst
+add wave -position insertpoint  \
+sim:/sequential/w
+add wave -position insertpoint  \
+sim:/sequential/e
+add wave -position insertpoint  \
+sim:/sequential/q
+add wave -position insertpoint  \
+sim:/sequential/t
+add wave -position insertpoint  \
+sim:/sequential/y
+add wave -position insertpoint  \
+sim:/sequential/r
+add wave -position insertpoint  \
+sim:/sequential/i
+add wave -position insertpoint  \
+sim:/sequential/u
+add wave -position insertpoint  \
+sim:/sequential/out
+force -freeze sim:/sequential/a 1 0
+force -freeze sim:/sequential/b 10 0
+force -freeze sim:/sequential/c 11 0
+force -freeze sim:/sequential/d 100 0
+force -freeze sim:/sequential/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/sequential/rst 1 0
+run
+run
+force -freeze sim:/sequential/rst 0 0
+run
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 350 ps.
+run
+run
+add wave -position insertpoint  \
+sim:/sequential/ns \
+sim:/sequential/s
+force -freeze sim:/sequential/rst 1 0
+run
+run
+run
+run
+run
+run
+force -freeze sim:/sequential/rst 0 0
+run
+run
+run
+run
+run
+# End time: 00:06:36 on May 01,2020, Elapsed time: 0:07:10
+# Errors: 1, Warnings: 0

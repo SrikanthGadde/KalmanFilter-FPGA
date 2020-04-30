@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/sequential/simulation/modelsim
+vadd
+Z1 !s110 1588271360
+!i10b 1
+!s100 kFYL>flED2<KTe9[:XE2J1
+IcI8IVZDDlGngj;fc]16Xb3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1588271353
+Z4 8D:/intelFPGA_lite/sequential/sequential.v
+Z5 FD:/intelFPGA_lite/sequential/sequential.v
+L0 65
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1588271359.000000
+Z8 !s107 D:/intelFPGA_lite/sequential/sequential.v|
+Z9 !s90 -reportprogress|300|-work|work|D:/intelFPGA_lite/sequential/sequential.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vmult
+R1
+!i10b 1
+!s100 ll]KeOUKCP^HZ7I68`N_k2
+InEo567GC=8CKLfEA1o3<T3
+R2
+R0
+R3
+R4
+R5
+L0 69
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vsequential
+R1
+!i10b 1
+!s100 ^Y<Y3<jfUa<@lDhC`LWMT0
+I_HXc07Je2FE]]9K8@YF6:1
+R2
+R0
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

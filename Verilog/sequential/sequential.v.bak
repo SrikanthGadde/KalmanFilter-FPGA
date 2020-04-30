@@ -1,0 +1,56 @@
+module sequential (output [31:0] out, input [31:0] a, input [31:0] b, input [31:0] c, input [31:0] d, input clk, input rst);
+
+reg [31:0] q,w,e,r,t,y;
+
+reg [3:0] s, ns; //state, next state
+
+add u1 (q, w,e); //o,i,i
+
+mult u2 (r, t,y); //o,i,i
+
+reg [31:0] u,i,o,p;
+
+always@(posedge clk)
+begin
+    if (rst) begin
+        w = 0;
+        e = 0;
+        t = 0;
+        y = 0;
+        
+        s <= 1'b0;
+        ns <= 1'b0;
+    end
+    else begin
+        s <= ns;
+    end
+end
+
+always@(s)
+case(s):
+    1'b0:  begin
+            t = a;
+            y = b;
+            
+            ns = 1'b1;
+            end
+    1'b1:  begin
+            t = r;
+            y = c;
+            
+            w = d;
+            e = r;
+            
+            //ns <= 1'b0;
+            end
+    
+
+endmodule
+
+module add(output [31:0] out, input [31:0] in1, input [31:0] in2);
+		assign out = in1 + in2;
+endmodule
+
+module mult(output [31:0] out, input [31:0] in1, input [31:0] in2);
+	assign out = in1 * in2;
+endmodule

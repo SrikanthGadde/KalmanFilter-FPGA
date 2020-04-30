@@ -1,0 +1,6 @@
+
+State Machine - |sequential|s
+Name s.0000 s.0010 s.0001 
+s.0000 0 0 0 
+s.0001 1 0 1 
+s.0010 1 1 0 
