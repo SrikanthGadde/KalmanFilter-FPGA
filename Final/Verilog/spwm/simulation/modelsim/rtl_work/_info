@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/spwm/simulation/modelsim
+vcounter
+Z1 !s110 1587481362
+!i10b 1
+!s100 zcLBaB[^;ln[;J:38H`YH0
+IaKSCg;<fA8HVJUm:Y`QZ:2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1587480750
+Z4 8D:/intelFPGA_lite/spwm/spwm.v
+Z5 FD:/intelFPGA_lite/spwm/spwm.v
+L0 48
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1587481362.000000
+Z8 !s107 D:/intelFPGA_lite/spwm/spwm.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/intelFPGA_lite/spwm|D:/intelFPGA_lite/spwm/spwm.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+D:/intelFPGA_lite/spwm
+Z12 tCvgOpt 0
+vqmult
+R1
+!i10b 1
+!s100 `dzD2FeocUjMWH1TID[e03
+I`d?h1d<181c]ndnV>P;U40
+R2
+R0
+R3
+R4
+R5
+L0 80
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vspwm
+R1
+!i10b 1
+!s100 J<R:NiW8<a;82Mk?i>kfM0
+If9zd6AhY1;6PRYdzLPl6K2
+R2
+R0
+R3
+R4
+R5
+L0 5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
