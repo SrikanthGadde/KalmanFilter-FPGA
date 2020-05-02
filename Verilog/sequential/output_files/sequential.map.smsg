@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at sequential.v(29): always construct contains both blocking and non-blocking assignments File: D:/intelFPGA_lite/sequential/sequential.v Line: 29
