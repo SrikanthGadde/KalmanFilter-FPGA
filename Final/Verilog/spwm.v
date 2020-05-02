@@ -1,73 +1,93 @@
-`timescale 1ns/1ns
+//`timescale 1ns/1ns
 
-module spwm #(parameter [31:0] m = 32'b0000_1100_1100_1100_1100_1100_1100_1101)
-    (output Sau, output Sal, output Sbu, output Sbl, output Scu, output Scl,
-    input [31:0] x, input [31:0] y, input [31:0] z, input [31:0] count);
+//32'b0000_1100_1100_1100_1100_1100_1100_1101 = 0.8
+
+
+// Counter will generate a 10kHz traingle wave for a 10ns clock period
+
+
+module spwm #(parameter signed [31:0] m = 32'sb0001_0000_0000_0000_0000_0000_0000_0000)
+    (output reg Sau, output reg Sal, output reg Sbu, output reg Sbl, output reg Scu, output reg Scl, output signed [31:0] out,
+    input signed [31:0] x, input signed [31:0] y, input signed [31:0] z, input clk, input res);
     
+    wire signed [31:0] count;
+    
+    counter uut(clk,res, count);
+    
+    assign out = count;
+  
+	wire signed [31:0] x_m, y_m, z_m;
+	
     qmult u1 (x, m, x_m);
     qmult u2 (y, m, y_m);
     qmult u3 (z, m, z_m);
     
-    always@(count, x_m, y_m, z_m)
+    always@(count, x, y, z)
     begin
+	
     if (x_m < count) begin
-        Sau = 1'b0;
-        Sal = 1'b1;
+        Sau <= 1'b0;
+        Sal <= 1'b1;
     end
     else begin
-        Sau = 1'b1;
-        Sal = 1'b0;
-    
+        Sau <= 1'b1;
+        Sal <= 1'b0;
+    end
+	 
     if (y_m < count) begin
-        Sbu = 1'b0;
-        Sbl = 1'b1;
+        Sbu <= 1'b0;
+        Sbl <= 1'b1;
     end
     else begin
-        Sbu = 1'b1;
-        Sbl = 1'b0;
+        Sbu <= 1'b1;
+        Sbl <= 1'b0;
     end
     
     if (z_m < count) begin
-        Scu = 1'b0;
-        Scl = 1'b1;
+        Scu <= 1'b0;
+        Scl <= 1'b1;
     end
     else begin
-        Scu = 1'b1;
-        Scl = 1'b0;
+        Scu <= 1'b1;
+        Scl <= 1'b0;
     end
-    
+	 
+	 end
+endmodule
 
+//TODO Check frequency
 module counter(
   input  clk,res,
-  output reg signed [7:0] out2 );
+  output reg signed [31:0] out2 );
 
-reg downup;
+reg down;
 
 always @(posedge clk) begin
-  if (!res) begin // synchronous reset
-    downup <= 1'b0;
-    out2   <= 8'h00;
+  if (res) begin // synchronous reset
+    out2   <= 32'sb1111_0000_0000_0000_0000_0000_0000_0000;
   end
   else begin // synchronous logic
-    if (out2 == 8'b1000_0001) begin
-      downup <= 1'b0; // up
-      out2 <= 8'b1000_0010;
+    if (out2 <= 32'sb1111_0000_0000_0000_0000_0000_0000_0000) begin
+      down <= 1'b0; // up
+      out2 <= 32'sb1111_0000_0000_0001_1010_0011_0110_1110;
     end
-    else if (out2 == 8'b0111_1111) begin
-      downup <= 1'b1; // down
-      out2 <= 8'b0111_1110;
+    else if (out2 >=32'sb0001_0000_0000_0000_0000_0000_0000_0000) begin
+      down <= 1'b1; // down
+      out2 <= 32'sb0000_1111_1111_1110_0101_1100_1001_0010 - 32'sb0000_0000_0000_0000_0000_0111_0010_0000;
     end
-    else if (downup) begin // down
-      out2 <= out2 - 1;
+    else if (down) begin // down
+      out2 <= out2 - 32'sb0000_0000_0000_0001_1010_0011_0110_1110;
     end
     else begin // up
-      out2 <= out2 + 1;
+      out2 <= out2 + 32'sb0000_0000_0000_0001_1010_0011_0110_1110;
     end
   end
 end
 endmodule
 
-
+//3.3937394618988037e-06 = 00000000000000000000001110001111
+//6.794929504394531e-06 = 00000000000000000000011100100000
+//0.0001 = 0000_0000_0000_0000_0110_1000_1101_1011
 
 module qmult #(
 	//Parameterized values
